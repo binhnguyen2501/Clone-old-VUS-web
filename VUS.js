@@ -33,7 +33,7 @@ for(let i=0; i<lengthObject; i++){
 // getElementByID tức là gọi thẻ có trong code với id như đã đặt
 // => querySelector và getElement tất cả các giá trị trả về đều là các thẻ(node)
 // => về bản chất querySelectorAll và getElementByClassName giống nhau chỉ khác nhau ở tên mảng là NodeList và HTMLCollection
-// ==> thực tế thường sử dụng querySelector và querySelectorAll hơn do tính linh hoạt của nó (collect như CSS)
+// ==> thực tế thường sử dụng querySelector và querySelectorAll hơn do tính linh hoạt của nó (selector như CSS)
 
 
 var cursor = document.querySelector('.cursor')
