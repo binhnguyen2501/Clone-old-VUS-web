@@ -267,7 +267,7 @@ header{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 2.5rem;
+    margin-left: 3.8rem;
 }
 .news_text_Three{
     padding: .5rem 0;
@@ -312,7 +312,6 @@ header{
     top: 0;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    transition: .1s;
 }
 .cursor2{
     position: fixed;
@@ -324,7 +323,6 @@ header{
     top: 0;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    transition: .12s;
 }
 .link-grow_cursor{
     transform: translate(-50%, -50%) scale(1.5);
