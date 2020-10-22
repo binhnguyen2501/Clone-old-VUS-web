@@ -22,8 +22,28 @@ header{
 .header_logo #logo{
     margin-left: 1rem;
 }
+.header_logo .logo{
+    transform: translateX(10em);
+    opacity: 0;
+    transition: opacity .3s .25s ease-in,
+                transform 2s .25s ease-out;
+}
+.header_logo .logo.is-visible{
+    transform: translateX(0em);
+    opacity: 1;
+}
 .header_logo #slogan{
    margin-right: 8rem;
+}
+.header_logo .slogan{
+    transform: translateX(-10em);
+    opacity: 0;
+    transition: opacity .3s .25s ease-in,
+                transform 2s .25s ease-out;
+}
+.header_logo .slogan.is-visible{
+    transform: translateX(0em);
+    opacity: 1;
 }
 .top-nav{
     height: 7vh;
@@ -101,10 +121,15 @@ header{
 #banner{
     margin: 1rem .5rem;
 }
-#banner img{
+.banner{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity .5s .25s ease-in;
+}
+.banner.is-visible{
+    opacity: 1;
 }
 /*Intro Section*/
 .intro_container{
@@ -114,11 +139,16 @@ header{
     text-align: center;
     text-transform: uppercase;
     cursor: default;
+    transform: scale(0);
+    transition: transform 1s ease-out;
 }
 .intro h2{
     font-family: 'Lobster' , sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
+}
+.intro.zoom{
+    transform: scale(1);
 }
 .introCharacter{
     text-align: center;
@@ -312,6 +342,7 @@ header{
     top: 0;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    z-index: 100;
 }
 .cursor2{
     position: fixed;
@@ -323,6 +354,7 @@ header{
     top: 0;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    z-index: 100;
 }
 .link-grow_cursor{
     transform: translate(-50%, -50%) scale(1.5);
@@ -453,4 +485,3 @@ header{
         margin: 7rem 5rem;
     }
 }
-

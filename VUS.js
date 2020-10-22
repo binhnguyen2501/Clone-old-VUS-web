@@ -38,6 +38,7 @@ for(let i=0; i<lengthObject; i++){
 
 var cursor = document.querySelector('.cursor')
 var cursor2 = document.querySelector('.cursor2')
+
 document.addEventListener('mousemove' , function(e){
     cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px;"  + "top: " + e.clientY + "px;"
 })
@@ -52,3 +53,41 @@ nav_link.forEach(link =>{
         cursor2.classList.remove('link-grow_cursor2');
     })
 });
+
+document.addEventListener('scroll' , function(){
+    var elementToShow = document.querySelectorAll('.show-on-scroll');
+    var contentZoom = document.querySelectorAll('.contentZoom');
+
+    function loop(){
+        elementToShow.forEach(el =>{
+            if(isInViewport(el)){
+                el.classList.add('is-visible');
+            }
+            else{
+                el.classList.remove('is-visible');
+            }
+        });
+
+        contentZoom.forEach(el =>{
+            if(isInViewport(el)){
+                el.classList.add('zoom');
+            }
+            else{
+                el.classList.remove('zoom');
+            }
+        })
+    }
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    loop();
+})
+
+
